@@ -2,6 +2,7 @@
  *
  * @author jonathan
  */
+/*
 public class DivingHelmet extends Mod {
 	@Override
 	public void activate() {
@@ -10,22 +11,25 @@ public class DivingHelmet extends Mod {
 
 	@Override
 	public boolean onEntityDamage(DamageType type, Entity attacker, Entity defender, int damage) {
-		Server.log(" took " + damage + " " + type.toString() + " damage");
-
 		if( !defender.isPlayer() ) return false;
-		Player player = defender.getPlayer();
+		try {
+			Player player = defender.toPlayer();
+			if( type != DamageType.WATER ) return false;
 
-		player.sendChat("took damage: "+type.toString() + ":" + damage);
+			player.sendChat(player.getArmorSlot(ArmorSlot.HEAD).getEntityType().getName());
 
-		if( 0 != type.compareTo(DamageType.WATER) ) return false;		
-
-		for( Item a: defender.getPlayer().getArmor() ) {
-			if( a.getId() == EntityType.IRON_HELMET ) {
-				player.sendChat("found Iron Helm");
-				return defender.getPlayer().removeItem(EntityTypeEnum.REED, 1);
+			if( player.getArmorSlot(ArmorSlot.HEAD).getEntityType() == EntityType.IRON_HELMET ) {
+				player.sendChat("found iron helm");
+				return player.removeItem(EntityType.REED, 1);
 			}
+
 		}
+		catch( TypeMissmatch e ) {
+			return false;
+		}
+
 		return false;
 	}
 
 }
+*/
