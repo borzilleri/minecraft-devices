@@ -28,7 +28,6 @@ public class Device extends JavaPlugin {
 		// Register our events
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvent(Event.Type.PLAYER_COMMAND, playerListener, Priority.Low, this);
-		pm.registerEvent(Event.Type.ENTITY_DAMAGEDBY_BLOCK, entityListener, Priority.Low, this);
 		pm.registerEvent(Event.Type.ENTITY_DAMAGED, entityListener, Priority.Low, this);
 
 		// EXAMPLE: Custom code, here we just output some info so we can check all is well
