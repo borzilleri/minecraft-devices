@@ -1,3 +1,8 @@
 name: Device
 main: com.asylumsw.bukkit.device.Device
 version: 1.0
+commands:
+  snow:
+    description: Use the redstone-powered SnowBlower to spread out snow.
+  ice:
+    description: This redstone-powered IceMachine turns snow into ice.
