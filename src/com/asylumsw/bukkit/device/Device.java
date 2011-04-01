@@ -24,7 +24,7 @@ public class Device extends JavaPlugin {
 
 		// Register our events
 		PluginManager pm = getServer().getPluginManager();
-		pm.registerEvent(Event.Type.ENTITY_DAMAGED, entityListener, Priority.Low, this);
+		pm.registerEvent(Event.Type.ENTITY_DAMAGE, entityListener, Priority.Low, this);
 
 		PluginDescriptionFile pdfFile = this.getDescription();
 		System.out.println(pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!");
