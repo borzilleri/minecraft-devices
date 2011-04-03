@@ -37,6 +37,11 @@ public class Device extends JavaPlugin {
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		if( !(sender instanceof Player) ) {
+			sender.sendMessage("[devices] Only players may use this command.");
+			return true;
+		}
+		
 		if( cmd.getName().equalsIgnoreCase("snow") ) {
 			SnowBlower.handleCommand((Player)sender);
 			return true;
