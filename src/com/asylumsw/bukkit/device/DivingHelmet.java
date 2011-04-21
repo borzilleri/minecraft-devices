@@ -24,7 +24,7 @@ public class DivingHelmet {
 
 		// Player is NOT wearing an iron helmet
 		if( null == player.getInventory().getHelmet() ||
-				Material.IRON_HELMET != player.getInventory().getHelmet().getType() ) 
+				Material.PUMPKIN != player.getInventory().getHelmet().getType() )
 			return event;
 
 		// The player has "used" their diving helmet successfully within the
